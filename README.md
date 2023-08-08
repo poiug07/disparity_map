@@ -1,6 +1,19 @@
 # CS4186 HW2: Stereo Disparity Estimation
 
-Check out report it is given in this repository and scores given in `results.txt`.
+Used finetuned neural network(PSMNet) and OpenCV library for disparity or depth estimation given two images from left and right cameras. The project aims to maximize PSNR scores between predicted and ground truth disparities(left camera image).
+
+## Some Results
+<img src="assets/image5.png" width=500/>
+
+> Ground truth disparity map(left) vs disparity map predicted using SGBM from OpenCV(right).
+
+<img src="assets/image1.png" width=500/>
+
+> PSMNet output and PSMNet output combined with SGBM. Later discovered better method of normalizing output images, that improves results by clipping "peak" values and adding smoothing.
+
+You can check out report and scores given in `results.txt`. [Report](CS4186_assignment2_report.pdf) shows experiments that we have tried.
+
+Training PSMNet took ~18 hours on NVIDIA GTX970 and batch size of 1. SGBM parameters where manually chosen, by experimenting.
 
 ## How to run
 
